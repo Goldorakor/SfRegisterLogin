@@ -5,6 +5,11 @@ framework:
     # Note that the session will be started ONLY if you read or write from it.
     session: true
 
+
+    # Activer la protection CSRF : conseil de chatGPT
+    # csrf_protection: true
+
+
     #esi: true
     #fragments: true
 

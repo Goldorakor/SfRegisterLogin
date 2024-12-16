@@ -12,6 +12,21 @@
         {% endblock %}
     </head>
     <body>
+
+
+        {# raccourci clavier : ife #}
+        {% if app.user %} {# booléen : si app.user, l'utilisateur est connecté : il accède à une navbar #}
+            <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            <a href="">Mon profil</a>
+        {% else %} {# booléen : sinon, l'utilisateur est déconnecté : il accède à une autre navbar #}
+            <a href="{{ path('app_login') }}">Se connecter</a>
+            <a href="{{ path('app_register') }}">S'enregistrer</a>
+        {% endif %}
+
+        {% if is_granted('ROLE_ADMIN') %} 
+            <a href="">Panneau administration</a>
+        {% endif %}
+        
         {% block body %}{% endblock %}
     </body>
 </html>
